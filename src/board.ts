@@ -22,13 +22,17 @@ class Board {
   halfmoveClock: number;
   fullMoveClock: number;
   turn: number;
-  canWhiteCastleK: boolean;
-  canWhiteCastleQ: boolean;
-  canBlackCastleK: boolean;
-  canBlackCastleQ: boolean;
+  canWhiteCastleKPerm: boolean;
+  canWhiteCastleQPerm: boolean;
+  canBlackCastleKPerm: boolean;
+  canBlackCastleQPerm: boolean;
   result: string;
   fen: string;
   enPassantSquare: string;
+  canWhiteCastleKTemp: boolean;
+  canWhiteCastleQTemp: boolean;
+  canBlackCastleKTemp: boolean;
+  canBlackCastleQTemp: boolean;
 
   constructor() {
     this.PAWN = PAWN;
@@ -63,10 +67,14 @@ class Board {
     this.fen;
 
     this.turn = 0;
-    this.canWhiteCastleK = true;
-    this.canWhiteCastleQ = true;
-    this.canBlackCastleK = true;
-    this.canBlackCastleQ = true;
+    this.canWhiteCastleKPerm = true;
+    this.canWhiteCastleQPerm = true;
+    this.canBlackCastleKPerm = true;
+    this.canBlackCastleQPerm = true;
+    this.canWhiteCastleKTemp = true;
+    this.canWhiteCastleQTemp = true;
+    this.canBlackCastleKTemp = true;
+    this.canBlackCastleQTemp = true;
 
     this.isCheckMate = false;
     this.isStaleMate = false;
@@ -122,21 +130,21 @@ class Board {
     // add castling rights
     let castleString = "";
 
-    if (!this.canWhiteCastleK && !this.canWhiteCastleQ) {
+    if (!this.canWhiteCastleKPerm && !this.canWhiteCastleQPerm) {
       castleString += "-";
-    } else if (!this.canWhiteCastleK && this.canWhiteCastleQ) {
+    } else if (!this.canWhiteCastleKPerm && this.canWhiteCastleQPerm) {
       castleString += "Q";
-    } else if (!this.canWhiteCastleQ && this.canWhiteCastleK) {
+    } else if (!this.canWhiteCastleQPerm && this.canWhiteCastleKPerm) {
       castleString += "K";
     } else {
       castleString += "KQ";
     }
 
-    if (!this.canBlackCastleK && !this.canBlackCastleQ) {
+    if (!this.canBlackCastleKPerm && !this.canBlackCastleQPerm) {
       castleString += "-";
-    } else if (!this.canBlackCastleK && this.canBlackCastleQ) {
+    } else if (!this.canBlackCastleKPerm && this.canBlackCastleQPerm) {
       castleString += "q";
-    } else if (!this.canBlackCastleQ && this.canBlackCastleK) {
+    } else if (!this.canBlackCastleQPerm && this.canBlackCastleKPerm) {
       castleString += "k";
     } else {
       castleString += "kq";
@@ -201,19 +209,19 @@ class Board {
 
       switch (castleRights.indexOf(castleDir)) {
         case 0: {
-          this.canWhiteCastleK = false;
+          this.canWhiteCastleKPerm = false;
           break;
         }
         case 1: {
-          this.canWhiteCastleQ = false;
+          this.canWhiteCastleQPerm = false;
           break;
         }
         case 2: {
-          this.canBlackCastleK = false;
+          this.canBlackCastleKPerm = false;
           break;
         }
         case 3: {
-          this.canBlackCastleQ = false;
+          this.canBlackCastleQPerm = false;
           break;
         }
       }
@@ -755,12 +763,12 @@ class Board {
 
         if (square.getPiece === this.EMPTY) {
           continue;
-        } else if (square.getPieceObj.getColor === color) {
+        } else if (square.getPieceObj.getColor !== color) {
           continue;
         }
         const moves = await this._parseMoveMap(square.getPieceObj);
         const attackedSquaresForPiece = moves.captureOnly.concat(
-          moves.moveAndCapture.concat(moves.moveOnly)
+          moves.moveAndCapture
         );
 
         attackedSquaresForPiece.forEach((sq) => {
@@ -784,6 +792,13 @@ class Board {
         3. Pieces in the way of the king and rook have been cleared
     */
 
+    // TODO: if we permanently cannot castle in one direction then the temp variable for that direction is set to false
+    this.canWhiteCastleKTemp = !this.canWhiteCastleKPerm ? false : true;
+    this.canBlackCastleKTemp = !this.canBlackCastleKPerm ? false : true;
+
+    this.canWhiteCastleQTemp = !this.canWhiteCastleQPerm ? false : true;
+    this.canBlackCastleQTemp = !this.canBlackCastleQPerm ? false : true;
+
     const rookSquares = ["a1", "a8", "h1", "h8"];
     let pieceName = "";
 
@@ -799,11 +814,11 @@ class Board {
       // if the king has moved then that side cannot castle anymore
       if (pieceName === "k") {
         if (pieceColor === "black") {
-          this.canBlackCastleK = false;
-          this.canBlackCastleQ = false;
+          this.canBlackCastleKPerm = false;
+          this.canBlackCastleQPerm = false;
         } else {
-          this.canWhiteCastleK = false;
-          this.canWhiteCastleQ = false;
+          this.canWhiteCastleKPerm = false;
+          this.canWhiteCastleQPerm = false;
         }
         continue;
       }
@@ -816,15 +831,106 @@ class Board {
       if (rookSquareIndex > 2) {
         // eliminate queenside castling
         pieceColor === "white"
-          ? (this.canWhiteCastleQ = false)
-          : (this.canBlackCastleQ = false);
+          ? (this.canWhiteCastleQPerm = false)
+          : (this.canBlackCastleQPerm = false);
       } else {
         pieceColor === "white"
-          ? (this.canWhiteCastleK = false)
-          : (this.canBlackCastleK = false);
+          ? (this.canWhiteCastleKPerm = false)
+          : (this.canBlackCastleKPerm = false);
       }
     }
-    console.log(await this._getAllAttackedSquares("white"));
+
+    // check if castling is clear
+    const squaresNeededFree = ["g8", "g1", "f8", "f1", "d8", "d1", "c8", "c1"];
+
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < this.board[i].length; j++) {
+        if (!squaresNeededFree.includes(this.board[i][j].getNotation)) {
+          continue;
+        }
+
+        switch (this.board[i][j].getNotation) {
+          // _________________________________
+          case "g8":
+
+          case "f8": {
+            this.canBlackCastleKTemp = false;
+            break;
+          }
+          // _________________________________
+          case "d8":
+
+          case "c8": {
+            this.canBlackCastleQTemp = false;
+            break;
+          }
+          // _________________________________
+          case "g1":
+
+          case "f1": {
+            this.canWhiteCastleKTemp = false;
+            break;
+          }
+          // _________________________________
+          case "d1":
+
+          case "c1": {
+            this.canWhiteCastleQTemp = false;
+            break;
+          }
+        }
+      }
+    }
+
+    // get attacked squares
+    const attackedSquaresW = await this._getAllAttackedSquares("white");
+    const attackedSquaresB = await this._getAllAttackedSquares("black");
+
+    // check if squares in the way of castling are attacked
+    attackedSquaresW.forEach((sq) => {
+      if (sq.getNotation === "d8" || sq.getNotation === "c8") {
+        this.canBlackCastleKTemp = false;
+      } else if (sq.getNotation === "f8" || sq.getNotation === "g8") {
+        this.canBlackCastleQTemp = false;
+      }
+    });
+
+    attackedSquaresB.forEach((sq) => {
+      if (sq.getNotation === "d1" || sq.getNotation === "c1") {
+        this.canWhiteCastleKTemp = false;
+      } else if (sq.getNotation === "f1" || sq.getNotation === "g1") {
+        this.canWhiteCastleQTemp = false;
+      }
+    });
+  }
+
+  _canCastle(color: string, direction: string) {
+    switch (direction) {
+      case "K": {
+        if (!this.canWhiteCastleKPerm) {
+          return false;
+        }
+        break;
+      }
+      case "Q": {
+        if (!this.canWhiteCastleQPerm) {
+          return false;
+        }
+        break;
+      }
+      case "k": {
+        if (!this.canBlackCastleKPerm) {
+          return false;
+        }
+        break;
+      }
+      case "q": {
+        if (!this.canBlackCastleQPerm) {
+          return false;
+        }
+        break;
+      }
+    }
   }
 
   _checkPawnFirstMove(squareFrom: Square, squareTo: Square) {

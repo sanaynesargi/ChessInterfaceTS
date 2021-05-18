@@ -4,6 +4,7 @@ class Piece {
   color: string;
   moveMap: Array<string>;
   ligature: any;
+  getFirstMoveMade: any;
 
   constructor(square: string, color: string) {
     this.square = square;
@@ -89,6 +90,10 @@ class Piece {
     }
 
     return ligature;
+  }
+
+  setFirstMoveMade() {
+    throw new Error("Method not implemented.");
   }
 }
 

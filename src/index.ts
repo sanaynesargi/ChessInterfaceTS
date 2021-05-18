@@ -10,23 +10,22 @@ async function scholarsMate(board: Board) {
   await board.movePiece("h5", "f7");
 }
 
-async function main() {
-  let board = new Board();
-
-  board
-    .setBoard
-    // "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
-    ();
-
-  await scholarsMate(board);
-
-  console.log(board.printBoard());
-
+function printMoves(board: Board) {
   board.getPlayedMoves.forEach((elem) => {
     console.log(
       `${elem.getPiece.getName} MOVED TO ${elem.getSquareTo} FROM ${elem.getSquareFrom}`
     );
   });
+}
+
+async function main() {
+  let board = new Board();
+
+  board.setBoard();
+
+  console.log(board.printBoard());
+
+  printMoves(board);
 }
 
 main();
