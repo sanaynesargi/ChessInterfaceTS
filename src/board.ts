@@ -1,6 +1,7 @@
 import { BISHOP, EMPTY, KING, KNIGHT, PAWN, QUEEN, ROOK } from "./constants";
 import Move from "./move";
 import Piece from "./piece";
+import Pawn from "./pieces/pawn";
 import Square from "./square";
 import flattenRank from "./utils/flattenRank";
 import getConsecutiveEmptySquares from "./utils/getConsecutiveEmptySquares";
@@ -415,14 +416,23 @@ class Board {
         currSq.getPieceObj.color !== "" &&
         currSq.getPieceObj.getColor === color
       ) {
+        // if (on === "a2") {
+        //   console.log("HERE");
+        // }
         break;
       }
 
       squares.push(currSq);
 
-      if (currSq.getNotation.charCodeAt(0) === 97) {
+      if (
+        currSq.getNotation.charCodeAt(0) === 97 ||
+        currSq.getNotation.charCodeAt(0) === 104
+      ) {
         break;
-      } else if (parseInt(currSq.getNotation.slice(-1)) === 1) {
+      } else if (
+        parseInt(currSq.getNotation.slice(-1)) === 1 ||
+        parseInt(currSq.getNotation.slice(-1)) === 8
+      ) {
         break;
       }
       curr = parseInt(
@@ -478,6 +488,81 @@ class Board {
       return -10;
     }
     return d;
+  }
+
+  _getPawnMoveInDirection(direction: number, pawn: Piece) {
+    const squareOn = pawn.getSquare;
+    const color = pawn.getColor;
+    const colorConstant = color === "white" ? 1 : -1;
+    switch (direction) {
+      case 0: {
+        let newX = squareOn.charCodeAt(0) - 1;
+        if (newX < 97 || newX > 104) {
+          return -1;
+        }
+        let newY = parseInt(squareOn.slice(-1)) + colorConstant;
+        if (newY < 1 || newY > 8) {
+          return -1;
+        }
+        let val = newX.toString() + newY.toString();
+        let newSquare = this._notationToSquare(parseInt(val));
+
+        if (!newSquare) {
+          throw new Error("PAWN MOVE CALCULATION ERROR");
+        }
+
+        return [newSquare];
+      }
+      case 1: {
+        let newY = parseInt(squareOn.slice(-1)) + colorConstant;
+        let X = squareOn.charCodeAt(0);
+        let squares: Array<Square> = new Array<Square>();
+
+        if (!pawn.getFirstMoveMade) {
+          let specialSquare = this._notationToSquare(
+            parseInt(X.toString() + (newY + colorConstant).toString())
+          );
+
+          if (!specialSquare) {
+            throw new Error("PAWN MOVE CALCULATION ERROR");
+          }
+
+          squares.push(specialSquare);
+        }
+
+        let newSquare = this._notationToSquare(parseInt(X + newY.toString()));
+
+        if (!newSquare) {
+          throw new Error("PAWN MOVE CALCULATION ERROR");
+        }
+
+        squares.push(newSquare);
+
+        return squares;
+      }
+      case 2: {
+        let newX = squareOn.charCodeAt(0) + 1;
+        if (newX < 97 || newX > 104) {
+          return -1;
+        }
+        let newY = parseInt(squareOn.slice(-1)) + colorConstant;
+        if (newY < 1 || newY > 8) {
+          return -1;
+        }
+        let newSquare = this._notationToSquare(
+          parseInt(newX.toString() + newY.toString())
+        );
+
+        if (!newSquare) {
+          throw new Error("PAWN MOVE CALCULATION ERROR");
+        }
+
+        return [newSquare];
+      }
+      default: {
+        return -1;
+      }
+    }
   }
 
   _checkKnightMoveArray(
@@ -580,14 +665,6 @@ class Board {
       return movableSquares;
     }
 
-    for (let i = 0; i < moveMap.length; i++) {
-      if (piece.getColor === "white") {
-        newMoveMap[i < 3 ? 0 : i > 4 ? 2 : 1].push(moveMap[i]);
-      } else {
-        newMoveMap[i < 3 ? 2 : i > 4 ? 0 : 1].push(moveMap[i]);
-      }
-    }
-
     //console.log("MOVEMAP: " + newMoveMap);
     let neighbors = this._get_neighbors(squareOn);
     let newNeighbors: Array<Array<string | undefined>> = [[], [], []];
@@ -598,11 +675,34 @@ class Board {
     for (let i = 0; i < neighbors.length; i++) {
       newNeighbors[i < 3 ? 0 : i > 4 ? 2 : 1].push(neighbors[i]);
     }
+    for (let i = 0; i < moveMap.length; i++) {
+      if (piece.getColor === "white") {
+        newMoveMap[i < 3 ? 0 : i > 4 ? 2 : 1].push(moveMap[i]);
+      } else {
+        newMoveMap[i < 3 ? 2 : i > 4 ? 0 : 1].push(moveMap[i]);
+      }
+    }
 
-    // console.log(newNeighbors);
-    // console.log(newMoveMap);
+    // PAWN MOVES HERE
+    if (piece.getName.toLowerCase() === "p") {
+      let squares = [];
+      for (let i = 0; i < 3; i++) {
+        squares.push(this._getPawnMoveInDirection(i, piece));
+      }
 
-    if (piece.getName.toLowerCase() !== "n") {
+      if (typeof squares[0] !== "number") {
+        movableSquares.captureOnly.push(squares[0][0]);
+      }
+      if (typeof squares[1] !== "number") {
+        for (let i = 0; i < squares[1].length; i++) {
+          movableSquares.moveOnly.push(squares[1][i]);
+        }
+      }
+      if (typeof squares[2] !== "number") {
+        movableSquares.captureOnly.push(squares[2][0]);
+      }
+      return movableSquares;
+    } else {
       for (let i = 0; i < newMoveMap.length; i++) {
         for (let j = 0; j < newMoveMap.length; j++) {
           let details = newMoveMap[i][j];
@@ -626,6 +726,7 @@ class Board {
 
           if (!details.includes(moveSquare)) {
             // CAPTURE ONLY: PAWN CAPTURE
+
             if (piece.getColor !== "white") {
               movableSquares.captureOnly.push(squares[0]);
             } else {
@@ -709,26 +810,23 @@ class Board {
           moves.moveOnly.push(newNotationSquare);
         }
       }
+
+      squareFrom.getPieceObj.setFirstMoveMade();
     }
 
     // CHECK IF SQUARE TO ME MOVED TO IS IN LEGAL MOVES
 
     if (moves.moveOnly.includes(squareTo)) {
-      if (this._checkPawnFirstMove(squareFrom, squareTo)) {
-        // DISABLE PAWN TWO MOVING PREVILEGES
-        let pawn = squareFrom.getPieceObj;
-        pawn.setFirstMoveMade();
+      if (moves.moveAndCapture.includes(squareTo)) {
+        result = true;
+      } else if (
+        moves.captureOnly.includes(squareTo) &&
+        this._checkCapture(squareFrom, squareTo)
+      ) {
+        result = true;
+      } else {
+        result = false;
       }
-      result = true;
-    } else if (moves.moveAndCapture.includes(squareTo)) {
-      result = true;
-    } else if (
-      moves.captureOnly.includes(squareTo) &&
-      this._checkCapture(squareFrom, squareTo)
-    ) {
-      result = true;
-    } else {
-      result = false;
     }
 
     return result;
@@ -752,6 +850,46 @@ class Board {
       squareFrom.getPieceColor !== squareTo.getPieceColor &&
       squareTo.getPieceColor !== undefined
     );
+  }
+
+  async getLegalMoves(color: string) {
+    let legalMoves: Array<Move> = new Array<Move>();
+
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < this.board[i].length; j++) {
+        const square = this.board[i][j];
+        if (square.getPiece === this.EMPTY) {
+          continue;
+        } else if (square.getPieceObj.getColor !== color) {
+          continue;
+        }
+
+        const piece = square.getPieceObj;
+        const legalSquaresObj = await this._parseMoveMap(piece);
+        const legalSquares = new Set(
+          legalSquaresObj.moveAndCapture.concat(legalSquaresObj.moveOnly)
+        );
+
+        const moves: Array<Move> = new Array<Move>();
+
+        legalSquares.forEach((sq) => {
+          if (
+            legalSquaresObj.captureOnly.includes(sq) &&
+            this._checkCapture(square, sq)
+          ) {
+            moves.push(new Move(piece, square, sq));
+          } else if (!legalSquaresObj.captureOnly.includes(sq)) {
+            moves.push(new Move(piece, square, sq));
+          }
+        });
+
+        moves.forEach((move) => {
+          legalMoves.push(move);
+        });
+      }
+    }
+
+    return legalMoves;
   }
 
   async _getAllAttackedSquares(color: string) {

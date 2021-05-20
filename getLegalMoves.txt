@@ -1,0 +1,37 @@
+async getLegalMoves(color: string) {
+  let legalMoves: Array<Move> = new Array<Move>();
+
+  for (let i = 0; i < this.board.length; i++) {
+    for (let j = 0; j < this.board[i].length; j++) {
+      const square = this.board[i][j];
+      if (square.getPiece !== this.EMPTY) {
+        continue;
+      } else if (square.getPieceObj.getColor !== color) {
+        continue;
+      }
+
+      const piece = square.getPieceObj;
+      const legalSquaresObj = await this._parseMoveMap(piece);
+      const legalSquares = legalSquaresObj.moveAndCapture.concat(legalSquaresObj.moveOnly);
+
+      const moves: Array<Move> = new Array<Move>();
+
+      legalSquares.forEach(sq => {
+	if (legalSquaresObj.captureOnly.includes(sq) && this._checkCapture(square, sq)) {
+          moves.push(
+            new Move(piece, square.getNotation, sq.getNotation)
+          );
+        } else if (!legalSquaresObj.captureOnly.includes(sq)) {
+            moves.push(
+              new Move(piece, square.getNotation, sq.getNotation)
+           );
+        }
+      });
+      
+      legalMoves.concat(moves);
+
+    }
+  }
+
+  return legalMoves;
+}

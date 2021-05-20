@@ -25,6 +25,16 @@ async function main() {
 
   console.log(board.printBoard());
 
+  let legalMoves = await board.getLegalMoves("white");
+
+  console.log(legalMoves.length);
+
+  legalMoves.forEach((move) => {
+    console.log(
+      `${move.getPiece.getName} TO: ${move.getSquareTo.getNotation} FROM: ${move.getSquareFrom.getNotation}`
+    );
+  });
+
   printMoves(board);
 }
 
