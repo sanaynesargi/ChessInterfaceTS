@@ -12,5 +12,8 @@
   },
   "dependencies": {
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^15.3.1"
   }
 }
