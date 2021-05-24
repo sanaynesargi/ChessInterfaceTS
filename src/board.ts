@@ -196,44 +196,46 @@ class Board {
       isWhiteSquare = !isWhiteSquare;
     }
 
-    // set turn
-    const turn = fen.slice(50, 51) === "w" ? 0 : 1;
-    this.turn = turn;
+    if (fen.length > 50) {
+      // set turn
+      const turn = fen.slice(50, 51) === "w" ? 0 : 1;
+      this.turn = turn;
 
-    // set castling rights
-    const castleRights = fen.slice(52, 56);
+      // set castling rights
+      const castleRights = fen.slice(52, 56);
 
-    for (const castleDir of castleRights) {
-      if (castleDir !== "-") {
-        continue;
+      for (const castleDir of castleRights) {
+        if (castleDir !== "-") {
+          continue;
+        }
+
+        switch (castleRights.indexOf(castleDir)) {
+          case 0: {
+            this.canWhiteCastleKPerm = false;
+            break;
+          }
+          case 1: {
+            this.canWhiteCastleQPerm = false;
+            break;
+          }
+          case 2: {
+            this.canBlackCastleKPerm = false;
+            break;
+          }
+          case 3: {
+            this.canBlackCastleQPerm = false;
+            break;
+          }
+        }
       }
 
-      switch (castleRights.indexOf(castleDir)) {
-        case 0: {
-          this.canWhiteCastleKPerm = false;
-          break;
-        }
-        case 1: {
-          this.canWhiteCastleQPerm = false;
-          break;
-        }
-        case 2: {
-          this.canBlackCastleKPerm = false;
-          break;
-        }
-        case 3: {
-          this.canBlackCastleQPerm = false;
-          break;
-        }
-      }
+      // add en passant target square
+      this.enPassantSquare = fen.slice(57, 58) !== "-" ? fen.slice(57, 58) : "";
+
+      // set move clocks
+      this.halfmoveClock = parseInt(fen.slice(59, 60));
+      this.fullMoveClock = parseInt(fen.slice(61, 62));
     }
-
-    // add en passant target square
-    this.enPassantSquare = fen.slice(57, 58) !== "-" ? fen.slice(57, 58) : "";
-
-    // set move clocks
-    this.halfmoveClock = parseInt(fen.slice(59, 60));
-    this.fullMoveClock = parseInt(fen.slice(61, 62));
 
     this.fen = fen;
   }
@@ -873,13 +875,10 @@ class Board {
         const moves: Array<Move> = new Array<Move>();
 
         legalSquares.forEach((sq) => {
-          if (
-            legalSquaresObj.captureOnly.includes(sq) &&
-            this._checkCapture(square, sq)
-          ) {
-            moves.push(new Move(piece, square, sq));
-          } else if (!legalSquaresObj.captureOnly.includes(sq)) {
-            moves.push(new Move(piece, square, sq));
+          if (!legalSquaresObj.captureOnly.includes(sq)) {
+            if (!this._checkCapture(square, sq)) {
+              moves.push(new Move(piece, square, sq));
+            }
           }
         });
 

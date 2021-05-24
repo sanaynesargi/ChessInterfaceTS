@@ -1,0 +1,800 @@
+INCORRECT: 2N5/3p4/P6k/4n3/P3KP2/R4p2/P3PP1p/Q4R2 CORRECT: 34 TRY: 37 
+BOARD: 
+. . N . . . . .
+. . . p . . . .
+P . . . . . . k
+. . . . n . . .
+P . . . K P . .
+R . . . . p . .
+P . . . P P . p
+Q . . . . R . .
+c8e7 c8a7 c8d6 c8b6 e4f5 e4e5 e4d5 e4d4 e4e3 a3f3 a3e3 a3d3 a3c3 a3b3 f1h1 f1g1 f1e1 f1d1 f1c1 f1b1 a1e5 a1d4 a1c3 a1b2 a1e1 a1d1 a1c1 a1b1 f4e5 e2f3 a6a7 f4f5 a4a5 e2e3 
+INCORRECT: 2k5/5p1n/2Pp2r1/3PR3/KP1p4/1N2q3/5rpp/8 CORRECT: 19 TRY: 16 
+BOARD: 
+. . k . . . . .
+. . . . . p . n
+. . P p . . r .
+. . . P R . . .
+K P . p . . . .
+. N . . q . . .
+. . . . . r p p
+. . . . . . . .
+e5e8 e5e7 e5e6 e5h5 e5g5 e5f5 e5e4 e5e3 a4b5 a4a5 a4a3 b3c5 b3a5 b3d4 b3d2 b3c1 b3a1 c6c7 b4b5 
+INCORRECT: 2n3n1/8/3pPNp1/1K3P2/2Pp4/8/1p2PPkp/4R3 CORRECT: 27 TRY: 22 
+BOARD: 
+. . n . . . n .
+. . . . . . . .
+. . . p P N p .
+. K . . . P . .
+. . P p . . . .
+. . . . . . . .
+. p . . P P k p
+. . . . R . . .
+f6g8 f6e8 f6h7 f6d7 f6h5 f6d5 f6g4 f6e4 b5c6 b5a6 b5a5 b5b4 b5a4 e1h1 e1g1 e1f1 e1d1 e1c1 e1b1 e1a1 f5g6 e6e7 c4c5 f2f3 e2e3 f2f4 e2e4 
+INCORRECT: 8/1k3PPP/2p2R1R/p1Kp4/7p/3q4/P1n5/1rQ5 CORRECT: 40 TRY: 36 
+BOARD: 
+. . . . . . . .
+. k . . . P P P
+. . p . . R . R
+p . K p . . . .
+. . . . . . . p
+. . . q . . . .
+P . n . . . . .
+. r Q . . . . .
+h6g6 h6h5 h6h4 f6g6 f6e6 f6d6 f6c6 f6f5 f6f4 f6f3 f6f2 f6f1 c5d6 c1g5 c1f4 c1e3 c1a3 c1d2 c1c2 c1b2 c1h1 c1g1 c1f1 c1e1 c1d1 c1b1 h7h8q h7h8r h7h8b h7h8n g7g8q g7g8r g7g8b g7g8n f7f8q f7f8r f7f8b f7f8n a2a3 a2a4 
+INCORRECT: 2nk4/p6P/5pp1/3P2n1/3K2Q1/8/Pr2rP1N/R7 CORRECT: 37 TRY: 36 
+BOARD: 
+. . n k . . . .
+p . . . . . . P
+. . . . . p p .
+. . . P . . n .
+. . . K . . Q .
+. . . . . . . .
+P r . . r P . N
+R . . . . . . .
+g4c8 g4d7 g4e6 g4h5 g4g5 g4f5 g4h4 g4f4 g4e4 g4h3 g4g3 g4f3 g4g2 g4e2 g4g1 d4c5 d4c4 d4d3 d4c3 h2f3 h2f1 a1h1 a1g1 a1f1 a1e1 a1d1 a1c1 a1b1 h7h8q h7h8r h7h8b h7h8n d5d6 f2f3 a2a3 f2f4 a2a4 
+INCORRECT: k3K3/2P4p/4p1Rp/7P/P1R2pN1/1pN1n3/8/4r3 CORRECT: 35 TRY: 30 
+BOARD: 
+k . . . K . . .
+. . P . . . . p
+. . . . p . R p
+. . . . . . . P
+P . R . . p N .
+. p N . n . . .
+. . . . . . . .
+. . . . r . . .
+e8f8 e8d8 e8f7 e8e7 e8d7 g6g8 g6g7 g6h6 g6f6 g6e6 g6g5 g4h6 g4f6 g4e5 g4e3 g4h2 g4f2 c4c6 c4c5 c4f4 c4e4 c4d4 c4b4 c3d5 c3b5 c3e4 c3e2 c3a2 c3d1 c3b1 c7c8q c7c8r c7c8b c7c8n a4a5 
+CORRECT: 7N/1Pk2PpP/2P3q1/4p3/2ppP3/4R2n/3P3K/8 MOVES: 21
+BOARD: 
+. . . . . . . N
+. P k . . P p P
+. . P . . . q .
+. . . . p . . .
+. . p p P . . .
+. . . . R . . n
+. . . P . . . K
+. . . . . . . .
+INCORRECT: 1n1K4/Pk4P1/2p4r/8/Pp1PPp2/N7/7P/6nN CORRECT: 25 TRY: 18 
+BOARD: 
+. n . K . . . .
+P k . . . . P .
+. . p . . . . r
+. . . . . . . .
+P p . P P p . .
+N . . . . . . .
+. . . . . . . P
+. . . . . . n N
+d8e8 d8e7 a3b5 a3c4 a3c2 a3b1 h1g3 h1f2 a7b8q a7b8r a7b8b a7b8n g7g8q g7g8r g7g8b g7g8n a7a8q a7a8r a7a8b a7a8n e4e5 d4d5 a4a5 h2h3 h2h4 
+INCORRECT: 7k/2Q5/1pp1r2n/1PP5/R1KP3P/p2N4/1P1r4/8 CORRECT: 39 TRY: 36 
+BOARD: 
+. . . . . . . k
+. . Q . . . . .
+. p p . r . . n
+. P P . . . . .
+R . K P . . . P
+p . . N . . . .
+. P . r . . . .
+. . . . . . . .
+c7d8 c7c8 c7b8 c7h7 c7g7 c7f7 c7e7 c7d7 c7b7 c7a7 c7d6 c7c6 c7b6 c7e5 c7f4 c7g3 c7h2 c4b4 c4c3 c4b3 a4a8 a4a7 a4a6 a4a5 a4b4 a4a3 d3e5 d3f4 d3b4 d3f2 d3e1 d3c1 c5b6 b5c6 b2a3 h4h5 d4d5 b2b3 b2b4 
+INCORRECT: n4r2/1R3p2/Kp3P1k/6R1/n1P3p1/3p1P2/6Pp/8 CORRECT: 24 TRY: 23 
+BOARD: 
+n . . . . r . .
+. R . . . p . .
+K p . . . P . k
+. . . . . . R .
+n . P . . . p .
+. . . p . P . .
+. . . . . . P p
+. . . . . . . .
+b7b8 b7f7 b7e7 b7d7 b7c7 b7a7 b7b6 a6a7 a6b5 g5g8 g5g7 g5g6 g5h5 g5f5 g5e5 g5d5 g5c5 g5b5 g5a5 g5g4 f3g4 c4c5 f3f4 g2g3 
+INCORRECT: q7/2P2R2/2kP1P2/4pp2/P3r1p1/4PnQ1/8/1R3K2 CORRECT: 36 TRY: 41 
+BOARD: 
+q . . . . . . .
+. . P . . R . .
+. . k P . P . .
+. . . . p p . .
+P . . . r . p .
+. . . . P n Q .
+. . . . . . . .
+. R . . . K . .
+f7f8 f7h7 f7g7 f7e7 f7d7 g3e5 g3h4 g3g4 g3f4 g3h3 g3f3 g3h2 g3g2 g3f2 g3g1 g3e1 f1g2 f1f2 f1e2 b1b8 b1b7 b1b6 b1b5 b1b4 b1b3 b1b2 b1e1 b1d1 b1c1 b1a1 c7c8q c7c8r c7c8b c7c8n d6d7 a4a5 
+INCORRECT: 8/1N1k4/2p1p1Pp/K5P1/1rP3N1/2p1PP2/1p4q1/8 CORRECT: 15 TRY: 20 
+BOARD: 
+. . . . . . . .
+. N . k . . . .
+. . p . p . P p
+K . . . . . P .
+. r P . . . N .
+. . p . P P . .
+. p . . . . q .
+. . . . . . . .
+b7d8 b7d6 b7c5 a5a6 a5b4 g4h6 g4f6 g4e5 g4h2 g4f2 g5h6 g6g7 c4c5 f3f4 e3e4 
+INCORRECT: 8/1RQq4/4P1p1/6P1/2Ppk1n1/2rr2p1/1n4K1/2N5 CORRECT: 30 TRY: 37 
+BOARD: 
+. . . . . . . .
+. R Q q . . . .
+. . . . P . p .
+. . . . . . P .
+. . P p k . n .
+. . r r . . p .
+. n . . . . K .
+. . N . . . . .
+c7d8 c7c8 c7b8 c7d7 c7d6 c7c6 c7b6 c7e5 c7c5 c7a5 c7f4 c7g3 b7b8 b7a7 b7b6 b7b5 b7b4 b7b3 b7b2 g2h3 g2h1 g2g1 g2f1 c1d3 c1b3 c1e2 c1a2 e6d7 e6e7 c4c5 
+INCORRECT: K5R1/2rp4/5p1N/1p5n/3R4/Qr2p3/P6P/1k1N4 CORRECT: 48 TRY: 41 
+BOARD: 
+K . . . . . R .
+. . r p . . . .
+. . . . . p . N
+. p . . . . . n
+. . . R . . . .
+Q r . . p . . .
+P . . . . . . P
+. k . N . . . .
+g8h8 g8f8 g8e8 g8d8 g8c8 g8b8 g8g7 g8g6 g8g5 g8g4 g8g3 g8g2 g8g1 a8b8 h6f7 h6f5 h6g4 d4d7 d4d6 d4d5 d4h4 d4g4 d4f4 d4e4 d4c4 d4b4 d4a4 d4d3 d4d2 a3f8 a3e7 a3a7 a3d6 a3a6 a3c5 a3a5 a3b4 a3a4 a3b3 a3b2 a3c1 d1e3 d1c3 d1f2 d1b2 a2b3 h2h3 h2h4 
+INCORRECT: n7/3P2N1/3p2R1/rN3P2/1n1p1p2/P7/2P2P2/1k4K1 CORRECT: 30 TRY: 24 
+BOARD: 
+n . . . . . . .
+. . . P . . N .
+. . . p . . R .
+r N . . . P . .
+. n . p . p . .
+P . . . . . . .
+. . P . . P . .
+. k . . . . K .
+g7e8 g7e6 g7h5 g6h6 g6f6 g6e6 g6d6 g6g5 g6g4 g6g3 g6g2 b5c7 b5a7 b5d6 b5d4 b5c3 g1h2 g1g2 g1h1 g1f1 a3b4 d7d8q d7d8r d7d8b d7d8n f5f6 a3a4 f2f3 c2c3 c2c4 
+INCORRECT: 2q5/2r3N1/2P4p/R3n2P/3k1p2/8/K2P1PpP/2Q5 CORRECT: 34 TRY: 28 
+BOARD: 
+. . q . . . . .
+. . r . . . N .
+. . P . . . . p
+R . . . n . . P
+. . . k . p . .
+. . . . . . . .
+K . . P . P p P
+. . Q . . . . .
+g7e8 g7e6 g7f5 a5a8 a5a7 a5a6 a5e5 a5d5 a5c5 a5b5 a5a4 a5a3 a2b3 a2a3 a2b2 a2b1 a2a1 c1c5 c1c4 c1c3 c1a3 c1c2 c1b2 c1h1 c1g1 c1f1 c1e1 c1d1 c1b1 c1a1 h2h3 f2f3 d2d3 h2h4 
+INCORRECT: 3RNn2/p3Pn2/rq6/2R5/P2P2kp/8/2K1Pp2/8 CORRECT: 35 TRY: 28 
+BOARD: 
+. . . R N n . .
+p . . . P n . .
+r q . . . . . .
+. . R . . . . .
+P . . P . . k p
+. . . . . . . .
+. . K . P p . .
+. . . . . . . .
+e8g7 e8c7 e8f6 e8d6 d8c8 d8b8 d8a8 d8d7 d8d6 d8d5 c5c8 c5c7 c5c6 c5h5 c5g5 c5f5 c5e5 c5d5 c5b5 c5a5 c5c4 c5c3 c2d3 c2c3 c2d2 c2d1 c2c1 e7f8q e7f8r e7f8b e7f8n d4d5 a4a5 e2e3 e2e4 
+INCORRECT: 2K5/2pP2pp/4R3/p2P2k1/P1R1r3/r4p2/1p6/6n1 CORRECT: 29 TRY: 20 
+BOARD: 
+. . K . . . . .
+. . p P . . p p
+. . . . R . . .
+p . . P . . k .
+P . R . r . . .
+r . . . . p . .
+. p . . . . . .
+. . . . . . n .
+c8d8 c8b8 c8c7 c8b7 e6e8 e6e7 e6h6 e6g6 e6f6 e6d6 e6c6 e6b6 e6a6 e6e5 e6e4 c4c7 c4c6 c4c5 c4e4 c4d4 c4b4 c4c3 c4c2 c4c1 d7d8q d7d8r d7d8b d7d8n d5d6 
+INCORRECT: 8/5p1n/2P2Pp1/p1K1P2k/4p1Rq/2PpP3/8/N7 CORRECT: 19 TRY: 28 
+BOARD: 
+. . . . . . . .
+. . . . . p . n
+. . P . . P p .
+p . K . P . . k
+. . . . p . R q
+. . P p P . . .
+. . . . . . . .
+N . . . . . . .
+c5d6 c5b6 c5d5 c5b5 c5d4 c5c4 g4g6 g4g5 g4h4 g4f4 g4e4 g4g3 g4g2 g4g1 a1b3 a1c2 c6c7 e5e6 c3c4 
+INCORRECT: 8/2kp2Rr/K5p1/3P4/5p2/P1PP2Pq/p6p/6n1 CORRECT: 15 TRY: 22 
+BOARD: 
+. . . . . . . .
+. . k p . . R r
+K . . . . . p .
+. . . P . . . .
+. . . . . p . .
+P . P P . . P q
+p . . . . . . p
+. . . . . . n .
+g7g8 g7h7 g7f7 g7e7 g7d7 g7g6 a6a7 a6b5 a6a5 g3f4 d5d6 g3g4 d3d4 c3c4 a3a4 
+CORRECT: 2K5/P2p4/P2rP3/1pp3p1/N5P1/1P3n2/2p3k1/3q4 MOVES: 15
+BOARD: 
+. . K . . . . .
+P . . p . . . .
+P . . r P . . .
+. p p . . . p .
+N . . . . . P .
+. P . . . n . .
+. . p . . . k .
+. . . q . . . .
+CORRECT: 8/np6/3K2kp/2P4N/1QP2P2/4RrP1/6NR/7n MOVES: 40
+BOARD: 
+. . . . . . . .
+n p . . . . . .
+. . . K . . k p
+. . P . . . . N
+. Q P . . P . .
+. . . . R r P .
+. . . . . . N R
+. . . . . . . n
+INCORRECT: 5k2/1p1P1P1P/4Kp2/p7/3P1PQp/1r6/R5pp/8 CORRECT: 37 TRY: 34 
+BOARD: 
+. . . . . k . .
+. p . P . P . P
+. . . . K p . .
+p . . . . . . .
+. . . P . P Q p
+. r . . . . . .
+R . . . . . p p
+. . . . . . . .
+e6f6 e6d6 e6f5 e6d5 g4g8 g4g7 g4g6 g4h5 g4g5 g4f5 g4h4 g4h3 g4g3 g4f3 g4g2 g4e2 g4d1 a2a5 a2a4 a2a3 a2g2 a2f2 a2e2 a2d2 a2c2 a2b2 a2a1 h7h8q h7h8r h7h8b h7h8n d7d8q d7d8r d7d8b d7d8n f4f5 d4d5 
+INCORRECT: 2Q2N2/1npr2k1/4n1p1/4K3/2r1P3/2P3PN/7P/4R3 CORRECT: 26 TRY: 34 
+BOARD: 
+. . Q . . N . .
+. n p r . . k .
+. . . . n . p .
+. . . . K . . .
+. . r . P . . .
+. . P . . . P N
+. . . . . . . P
+. . . . R . . .
+f8h7 f8d7 f8g6 f8e6 c8e8 c8d8 c8b8 c8a8 c8d7 c8c7 c8b7 e5e6 h3g5 h3f4 h3f2 h3g1 e1e3 e1e2 e1h1 e1g1 e1f1 e1d1 e1c1 e1b1 e1a1 g3g4 
+INCORRECT: 8/5pP1/Pp5P/3P2Pk/2KR1p2/2p2P2/5pQ1/7n CORRECT: 26 TRY: 31 
+BOARD: 
+. . . . . . . .
+. . . . . p P .
+P p . . . . . P
+. . . P . . P k
+. . K R . p . .
+. . p . . P . .
+. . . . . p Q .
+. . . . . . . n
+d4f4 d4e4 d4d3 d4d2 d4d1 c4b5 c4b4 c4d3 c4c3 c4b3 g2g4 g2h3 g2g3 g2h2 g2f2 g2h1 g2g1 g2f1 g7g8q g7g8r g7g8b g7g8n h6h7 a6a7 g5g6 d5d6 
+INCORRECT: 4nk2/p2pp2P/Kp2p1P1/3n3p/8/1P6/3RP1r1/8 CORRECT: 18 TRY: 22 
+BOARD: 
+. . . . n k . .
+p . . p p . . P
+K p . . p . P .
+. . . n . . . p
+. . . . . . . .
+. P . . . . . .
+. . . R P . r .
+. . . . . . . .
+a6b7 a6a7 a6b5 d2d5 d2d4 d2d3 d2c2 d2b2 d2a2 d2d1 h7h8q h7h8r h7h8b h7h8n g6g7 b3b4 e2e3 e2e4 
+INCORRECT: nn2K3/P7/2P2P2/5p2/2kPp1pq/2p4P/2P5/3Q4 CORRECT: 24 TRY: 25 
+BOARD: 
+n n . . K . . .
+P . . . . . . .
+. . P . . P . .
+. . . . . p . .
+. . k P p . p q
+. . p . . . . P
+. . P . . . . .
+. . . Q . . . .
+e8f8 e8d8 e8f7 e8e7 d1g4 d1f3 d1d3 d1e2 d1d2 d1h1 d1g1 d1f1 d1e1 d1c1 d1b1 d1a1 a7b8q a7b8r a7b8b a7b8n h3g4 f6f7 c6c7 d4d5 
+INCORRECT: 3K4/P2p4/p2n4/p3QpR1/1p3P2/6P1/2k3pP/3N4 CORRECT: 40 TRY: 43 
+BOARD: 
+. . . K . . . .
+P . . p . . . .
+p . . n . . . .
+p . . . Q p R .
+. p . . . P . .
+. . . . . . P .
+. . k . . . p P
+. . . N . . . .
+d8e7 d8d7 d8c7 g5g8 g5g7 g5g6 g5h5 g5f5 g5g4 e5h8 e5e8 e5g7 e5e7 e5f6 e5e6 e5d6 e5f5 e5d5 e5c5 e5b5 e5a5 e5e4 e5d4 e5e3 e5c3 e5e2 e5b2 e5e1 e5a1 d1e3 d1c3 d1f2 d1b2 a7a8q a7a8r a7a8b a7a8n g3g4 h2h3 h2h4 
+INCORRECT: 1R6/5n2/6p1/2K3P1/1rN1P3/PRq1PP2/2r4k/n7 CORRECT: 21 TRY: 30 
+BOARD: 
+. R . . . . . .
+. . . . . n . .
+. . . . . . p .
+. . K . . . P .
+. r N . P . . .
+P R q . P P . .
+. . r . . . . k
+n . . . . . . .
+b8h8 b8g8 b8f8 b8e8 b8d8 b8c8 b8a8 b8b7 b8b6 b8b5 b8b4 c5c6 c5d5 b3b4 b3c3 b3b2 b3b1 a3b4 e4e5 f3f4 a3a4 
+INCORRECT: NK6/2P2pr1/3Q4/3P2P1/6n1/1pp1P1p1/3pkp2/8 CORRECT: 27 TRY: 29 
+BOARD: 
+N K . . . . . .
+. . P . . p r .
+. . . Q . . . .
+. . . P . . P .
+. . . . . . n .
+. p p . P . p .
+. . . p k p . .
+. . . . . . . .
+b8c8 b8b7 b8a7 a8b6 d6f8 d6d8 d6e7 d6d7 d6h6 d6g6 d6f6 d6e6 d6c6 d6b6 d6a6 d6e5 d6c5 d6f4 d6b4 d6g3 d6a3 c7c8q c7c8r c7c8b c7c8n g5g6 e3e4 
+INCORRECT: 2N4n/3k4/P5p1/4K3/4NQ1p/1R1P2p1/1Pq1P2p/8 CORRECT: 40 TRY: 44 
+BOARD: 
+. . N . . . . n
+. . . k . . . .
+P . . . . . p .
+. . . . K . . .
+. . . . N Q . p
+. R . P . . p .
+. P q . P . . p
+. . . . . . . .
+c8e7 c8a7 c8d6 c8b6 e5f6 e5d5 e5d4 f4f8 f4f7 f4h6 f4f6 f4g5 f4f5 f4h4 f4g4 f4g3 f4f3 f4e3 f4f2 f4d2 f4f1 f4c1 e4f6 e4d6 e4g5 e4c5 e4g3 e4c3 e4f2 e4d2 b3b8 b3b7 b3b6 b3b5 b3b4 b3c3 b3a3 a6a7 d3d4 e2e3 
+INCORRECT: 2K5/1N4Nk/p2P1P2/2RqP3/2QpP3/8/2p1p2r/8 CORRECT: 31 TRY: 36 
+BOARD: 
+. . K . . . . .
+. N . . . . N k
+p . . P . P . .
+. . R q P . . .
+. . Q p P . . .
+. . . . . . . .
+. . p . p . . r
+. . . . . . . .
+c8d8 c8b8 c8d7 c8c7 g7e8 g7e6 g7h5 g7f5 b7d8 b7a5 c5c7 c5c6 c5d5 c5b5 c5a5 c4a6 c4d5 c4b5 c4d4 c4b4 c4a4 c4d3 c4c3 c4b3 c4e2 c4c2 c4a2 e4d5 f6f7 d6d7 e5e6 
+INCORRECT: 4K2n/2Rp4/4kpP1/8/r1N5/1r3qQ1/2Pp2P1/7n CORRECT: 31 TRY: 34 
+BOARD: 
+. . . . K . . n
+. . R p . . . .
+. . . . k p P .
+. . . . . . . .
+r . N . . . . .
+. r . . . q Q .
+. . P p . . P .
+. . . . . . . n
+e8f8 e8d8 c7c8 c7d7 c7b7 c7a7 c7c6 c7c5 c4d6 c4b6 c4e5 c4a5 c4e3 c4a3 c4d2 c4b2 g3d6 g3g5 g3e5 g3h4 g3g4 g3f4 g3h3 g3f3 g3h2 g3f2 g3e1 g2f3 c2b3 g6g7 c2c3 
+INCORRECT: R5r1/N1PR1rk1/3Q3p/p1ppK3/5P2/8/6P1/N7 CORRECT: 34 TRY: 31 
+BOARD: 
+R . . . . . r .
+N . P R . r k .
+. . . Q . . . p
+p . p p K . . .
+. . . . . P . .
+. . . . . . . .
+. . . . . . P .
+N . . . . . . .
+a8g8 a8f8 a8e8 a8d8 a8c8 a8b8 d7d8 d7f7 d7e7 a7c8 a7c6 a7b5 d6f8 d6e7 d6h6 d6g6 d6f6 d6e6 d6c6 d6b6 d6a6 d6d5 d6c5 e5e6 e5d5 a1b3 a1c2 c7c8q c7c8r c7c8b c7c8n f4f5 g2g3 g2g4 
+INCORRECT: 8/p4r1P/Kp6/5N1p/pk2PP2/5RPp/5p1p/8 CORRECT: 19 TRY: 21 
+BOARD: 
+. . . . . . . .
+p . . . . r . P
+K p . . . . . .
+. . . . . N . p
+p k . . P P . .
+. . . . . R P p
+. . . . . p . p
+. . . . . . . .
+f5g7 f5e7 f5h6 f5d6 f5h4 f5d4 f5e3 f3e3 f3d3 f3c3 f3b3 f3a3 f3f2 h7h8q h7h8r h7h8b h7h8n e4e5 g3g4 
+INCORRECT: 4N3/1p2Pp2/3R1P2/2pp2q1/4R2r/4p2N/n3K3/1k6 CORRECT: 28 TRY: 25 
+BOARD: 
+. . . . N . . .
+. p . . P p . .
+. . . R . P . .
+. . p p . . q .
+. . . . R . . r
+. . . . p . . N
+n . . . K . . .
+. k . . . . . .
+e8g7 e8c7 d6d8 d6d7 d6e6 d6c6 d6b6 d6a6 d6d5 e4e6 e4e5 e4h4 e4g4 e4f4 e4d4 e4c4 e4b4 e4a4 e4e3 h3g5 h3f4 h3f2 h3g1 e2f3 e2d3 e2f1 e2e1 e2d1 
+INCORRECT: 8/5qrP/2p3pN/p4n2/pP6/K4pkN/2r5/2Q5 CORRECT: 28 TRY: 22 
+BOARD: 
+. . . . . . . .
+. . . . . q r P
+. . p . . . p N
+p . . . . n . .
+p P . . . . . .
+K . . . . p k N
+. . r . . . . .
+. . Q . . . . .
+h6g8 h6f7 h6f5 h6g4 h3g5 h3f4 h3f2 h3g1 a3a4 c1g5 c1f4 c1e3 c1d2 c1c2 c1b2 c1h1 c1g1 c1f1 c1e1 c1d1 c1b1 c1a1 b4a5 h7h8q h7h8r h7h8b h7h8n b4b5 
+INCORRECT: 4n1K1/5pP1/2Pp4/P2N2pn/P1p4R/8/2k1pP2/8 CORRECT: 25 TRY: 20 
+BOARD: 
+. . . . n . K .
+. . . . . p P .
+. . P p . . . .
+P . . N . . p n
+P . p . . . . R
+. . . . . . . .
+. . k . p P . .
+. . . . . . . .
+g8h8 g8f8 g8h7 g8f7 d5e7 d5c7 d5f6 d5b6 d5f4 d5b4 d5e3 d5c3 h4h5 h4g4 h4f4 h4e4 h4d4 h4c4 h4h3 h4h2 h4h1 c6c7 a5a6 f2f3 f2f4 
+INCORRECT: 8/N1PP2p1/K7/4n1p1/1ppk4/p3p3/2p1Q2r/2r5 CORRECT: 29 TRY: 30 
+BOARD: 
+. . . . . . . .
+N . P P . . p .
+K . . . . . . .
+. . . . n . p .
+. p p k . . . .
+p . . . p . . .
+. . p . Q . . r
+. . r . . . . .
+a7c8 a7c6 a7b5 a6b7 a6b6 a6b5 a6a5 e2h5 e2g4 e2c4 e2f3 e2e3 e2d3 e2h2 e2g2 e2f2 e2d2 e2c2 e2f1 e2e1 e2d1 d7d8q d7d8r d7d8b d7d8n c7c8q c7c8r c7c8b c7c8n 
+INCORRECT: 5K2/4p1Rq/N6n/P2p4/PP3P2/6pP/2P4P/1k6 CORRECT: 19 TRY: 25 
+BOARD: 
+. . . . . K . .
+. . . . p . R q
+N . . . . . . n
+P . . p . . . .
+P P . . . P . .
+. . . . . . p P
+. . P . . . . P
+. k . . . . . .
+f8e8 f8e7 g7g8 g7h7 g7f7 g7e7 g7g6 g7g5 g7g4 g7g3 a6b8 a6c7 a6c5 h2g3 f4f5 b4b5 h3h4 c2c3 c2c4 
+INCORRECT: 4R3/pp6/1p4P1/q1P3p1/1Q2n2P/5n1P/k5K1/2r5 CORRECT: 31 TRY: 41 
+BOARD: 
+. . . . R . . .
+p p . . . . . .
+. p . . . . P .
+q . P . . . p .
+. Q . . n . . P
+. . . . . n . P
+k . . . . . K .
+. . r . . . . .
+e8h8 e8g8 e8f8 e8d8 e8c8 e8b8 e8a8 e8e7 e8e6 e8e5 e8e4 b4b6 b4b5 b4a5 b4e4 b4d4 b4c4 b4a4 b4c3 b4b3 b4a3 b4d2 b4b2 b4e1 b4b1 g2f3 c5b6 h4g5 g6g7 c5c6 h4h5 
+INCORRECT: N7/rp3R2/kp5p/2pn4/2K5/4p1PP/8/q1Rr4 CORRECT: 23 TRY: 22 
+BOARD: 
+N . . . . . . .
+r p . . . R . .
+k p . . . . . p
+. . p n . . . .
+. . K . . . . .
+. . . . p . P P
+. . . . . . . .
+q . R r . . . .
+a8c7 a8b6 f7f8 f7h7 f7g7 f7e7 f7d7 f7c7 f7b7 f7f6 f7f5 f7f4 f7f3 f7f2 f7f1 c4b3 c1c3 c1c2 c1d1 c1b1 c1a1 h3h4 g3g4 
+INCORRECT: 1R6/1P4K1/2r2p2/4n1Qp/P4P2/Rnq5/5PP1/7k CORRECT: 30 TRY: 40 
+BOARD: 
+. R . . . . . .
+. P . . . . K .
+. . r . . p . .
+. . . . n . Q p
+P . . . . P . .
+R n q . . . . .
+. . . . . P P .
+. . . . . . . k
+b8h8 b8g8 b8f8 b8e8 b8d8 b8c8 b8a8 g7h8 g7g8 g7f8 g7h7 g7h6 g5h6 g5g6 g5f6 g5h5 g5f5 g5e5 g5h4 g5g4 g5g3 a3b3 a3a2 a3a1 f4e5 f4f5 a4a5 g2g3 f2f3 g2g4 
+INCORRECT: 1k6/3r4/PN1P2P1/5NP1/ppp5/2p1p3/4p3/4K1n1 CORRECT: 15 TRY: 21 
+BOARD: 
+. k . . . . . .
+. . . r . . . .
+P N . P . . P .
+. . . . . N P .
+p p p . . . . .
+. . p . p . . .
+. . . . p . . .
+. . . . K . n .
+b6c8 b6a8 b6d7 b6d5 b6c4 b6a4 f5g7 f5e7 f5h6 f5h4 f5d4 f5g3 f5e3 g6g7 a6a7 
+INCORRECT: r6Q/2P5/8/N1npPpp1/1P4q1/6N1/2K2pk1/r7 CORRECT: 36 TRY: 22 
+BOARD: 
+r . . . . . . Q
+. . P . . . . .
+. . . . . . . .
+N . n p P p p .
+. P . . . . q .
+. . . . . . N .
+. . K . . p k .
+r . . . . . . .
+h8g8 h8f8 h8e8 h8d8 h8c8 h8b8 h8a8 h8h7 h8g7 h8h6 h8f6 h8h5 h8h4 h8h3 h8h2 h8h1 a5b7 a5c6 a5c4 a5b3 g3h5 g3f5 g3e4 g3e2 g3h1 g3f1 c2c3 c2d2 c2b2 b4c5 c7c8q c7c8r c7c8b c7c8n e5e6 b4b5 
+INCORRECT: 8/1k6/1P3K2/P1pP4/pPPp4/3P4/R2p2Rp/7N CORRECT: 31 TRY: 34 
+BOARD: 
+. . . . . . . .
+. k . . . . . .
+. P . . . K . .
+P . p P . . . .
+p P P p . . . .
+. . . P . . . .
+R . . p . . R p
+. . . . . . . N
+f6g7 f6f7 f6e7 f6g6 f6e6 f6g5 f6f5 f6e5 g2g8 g2g7 g2g6 g2g5 g2g4 g2g3 g2h2 g2f2 g2e2 g2d2 g2g1 a2a4 a2a3 a2d2 a2c2 a2b2 a2a1 h1g3 h1f2 b4c5 d5d6 a5a6 b4b5 
+INCORRECT: 8/PR5K/4PppP/8/1N1n4/P2P3k/Q3pp2/5q2 CORRECT: 31 TRY: 30 
+BOARD: 
+. . . . . . . .
+P R . . . . . K
+. . . . P p p P
+. . . . . . . .
+. N . n . . . .
+P . . P . . . k
+Q . . . p p . .
+. . . . . q . .
+h7h8 h7g8 h7g7 h7g6 b7b8 b7g7 b7f7 b7e7 b7d7 b7c7 b7b6 b7b5 b4c6 b4a6 b4d5 b4c2 a2d5 a2c4 a2b3 a2e2 a2d2 a2c2 a2b2 a2b1 a2a1 a7a8q a7a8r a7a8b a7a8n e6e7 a3a4 
+INCORRECT: 8/1P2r1pR/7R/4n1pp/2P5/pNk2P2/1N1p4/7K CORRECT: 28 TRY: 26 
+BOARD: 
+. . . . . . . .
+. P . . r . p R
+. . . . . . . R
+. . . . n . p p
+. . P . . . . .
+p N k . . P . .
+. N . p . . . .
+. . . . . . . K
+h7h8 h7g7 h6g6 h6f6 h6e6 h6d6 h6c6 h6b6 h6a6 h6h5 b3c5 b3a5 b3d4 b3d2 b3c1 b3a1 b2a4 b2d3 b2d1 h1h2 h1g2 h1g1 b7b8q b7b8r b7b8b b7b8n c4c5 f3f4 
+INCORRECT: 8/6p1/KQ6/3P4/n3RrP1/np4P1/q3prR1/2k5 CORRECT: 39 TRY: 46 
+BOARD: 
+. . . . . . . .
+. . . . . . p .
+K Q . . . . . .
+. . . P . . . .
+n . . . R r P .
+n p . . . . P .
+q . . . p r R .
+. . k . . . . .
+b6d8 b6b8 b6c7 b6b7 b6a7 b6h6 b6g6 b6f6 b6e6 b6d6 b6c6 b6c5 b6b5 b6a5 b6d4 b6b4 b6e3 b6b3 b6f2 a6b7 a6a7 a6a5 e4e8 e4e7 e4e6 e4e5 e4f4 e4d4 e4c4 e4b4 e4a4 e4e3 e4e2 g2h2 g2f2 g2g1 g3f4 d5d6 g4g5 
+INCORRECT: 7n/Pr4p1/5P2/1k3P2/3p2P1/1pqN2K1/2P3pp/8 CORRECT: 15 TRY: 21 
+BOARD: 
+. . . . . . . n
+P r . . . . p .
+. . . . . P . .
+. k . . . P . .
+. . . p . . P .
+. p q N . . K .
+. . P . . . p p
+. . . . . . . .
+g3h4 g3f4 g3h3 g3f3 g3h2 g3g2 g3f2 f6g7 c2b3 a7a8q a7a8r a7a8b a7a8n f6f7 g4g5 
+INCORRECT: N7/1PP3k1/1R1p4/n4p1p/p3P3/8/1PppK1P1/8 CORRECT: 26 TRY: 19 
+BOARD: 
+N . . . . . . .
+. P P . . . k .
+. R . p . . . .
+n . . . . p . p
+p . . . P . . .
+. . . . . . . .
+. P p p K . P .
+. . . . . . . .
+b6d6 b6c6 b6a6 b6b5 b6b4 b6b3 e2f3 e2e3 e2d3 e2f2 e2d2 e2f1 e4f5 c7c8q c7c8r c7c8b c7c8n b7b8q b7b8r b7b8b b7b8n e4e5 g2g3 b2b3 g2g4 b2b4 
+INCORRECT: 8/1k2Ppq1/5pRP/K2p3r/P3np2/1P6/3N1p2/8 CORRECT: 21 TRY: 22 
+BOARD: 
+. . . . . . . .
+. k . . P p q .
+. . . . . p R P
+K . . p . . . r
+P . . . n p . .
+. P . . . . . .
+. . . N . p . .
+. . . . . . . .
+g6g7 g6f6 g6g5 g6g4 g6g3 g6g2 g6g1 a5b5 a5b4 d2e4 d2c4 d2f3 d2f1 d2b1 h6g7 e7e8q e7e8r e7e8b e7e8n h6h7 b3b4 
+INCORRECT: 2Nk4/6KP/5R2/n6P/p2r4/2P2q2/PPN2n1p/8 CORRECT: 38 TRY: 29 
+BOARD: 
+. . N k . . . .
+. . . . . . K P
+. . . . . R . .
+n . . . . . . P
+p . . r . . . .
+. . P . . q . .
+P P N . . n . p
+. . . . . . . .
+c8e7 c8a7 c8d6 c8b6 g7h8 g7g8 g7f8 g7f7 g7h6 g7g6 f6f8 f6f7 f6h6 f6g6 f6e6 f6d6 f6c6 f6b6 f6a6 f6f5 f6f4 f6f3 c2d4 c2b4 c2e3 c2a3 c2e1 c2a1 c3d4 h7h8q h7h8r h7h8b h7h8n h5h6 c3c4 b2b3 a2a3 b2b4 
+INCORRECT: 8/qP6/1p1Kpk2/4prn1/1P6/NP3p2/PP6/5Q2 CORRECT: 28 TRY: 34 
+BOARD: 
+. . . . . . . .
+q P . . . . . .
+. p . K p k . .
+. . . . p r n .
+. P . . . . . .
+N P . . . p . .
+P P . . . . . .
+. . . . . Q . .
+d6d7 d6c7 d6c6 a3b5 a3c4 a3c2 a3b1 f1a6 f1b5 f1c4 f1h3 f1f3 f1d3 f1g2 f1f2 f1e2 f1h1 f1g1 f1e1 f1d1 f1c1 f1b1 f1a1 b7b8q b7b8r b7b8b b7b8n b4b5 
+INCORRECT: 3R4/rp6/1QPPP2K/4P3/n5p1/k2Ppq2/4p3/8 CORRECT: 31 TRY: 33 
+BOARD: 
+. . . R . . . .
+r p . . . . . .
+. Q P P P . . K
+. . . . P . . .
+n . . . . . p .
+k . . P p q . .
+. . . . p . . .
+. . . . . . . .
+d8h8 d8g8 d8f8 d8e8 d8c8 d8b8 d8a8 d8d7 h6h7 h6g7 h6g6 h6h5 h6g5 b6c7 b6b7 b6a7 b6a6 b6c5 b6b5 b6a5 b6d4 b6b4 b6e3 b6b3 b6b2 b6b1 c6b7 e6e7 d6d7 c6c7 d3d4 
+INCORRECT: K7/p4p2/1Qnr3R/5P2/p1p3Pn/2N5/5P2/2r1k3 CORRECT: 37 TRY: 39 
+BOARD: 
+K . . . . . . .
+p . . . . p . .
+. Q n r . . . R
+. . . . . P . .
+p . p . . . P n
+. . N . . . . .
+. . . . . P . .
+. . r . k . . .
+a8b7 h6h8 h6h7 h6g6 h6f6 h6e6 h6d6 h6h5 h6h4 b6d8 b6b8 b6c7 b6b7 b6a7 b6c6 b6a6 b6c5 b6b5 b6a5 b6d4 b6b4 b6e3 b6b3 b6b2 b6b1 c3d5 c3b5 c3e4 c3a4 c3e2 c3a2 c3d1 c3b1 f5f6 g4g5 f2f3 f2f4 
+INCORRECT: 3q4/pP1r4/6P1/1p2R1p1/3P1P2/4np1k/1K5P/Q7 CORRECT: 37 TRY: 26 
+BOARD: 
+. . . q . . . .
+p P . r . . . .
+. . . . . . P .
+. p . . R . p .
+. . . P . P . .
+. . . . n p . k
+. K . . . . . P
+Q . . . . . . .
+e5e8 e5e7 e5e6 e5g5 e5f5 e5d5 e5c5 e5b5 e5e4 e5e3 b2c3 b2b3 b2a3 b2a2 b2c1 b2b1 a1a7 a1a6 a1a5 a1a4 a1a3 a1a2 a1h1 a1g1 a1f1 a1e1 a1d1 a1c1 a1b1 f4g5 b7b8q b7b8r b7b8b b7b8n g6g7 f4f5 d4d5 
+INCORRECT: 8/2p2N2/3N4/p2p4/Pp4Qp/R3P3/P1K1p1Pk/8 CORRECT: 42 TRY: 44 
+BOARD: 
+. . . . . . . .
+. . p . . N . .
+. . . N . . . .
+p . . p . . . .
+P p . . . . Q p
+R . . . P . . .
+P . K . p . P k
+. . . . . . . .
+f7h8 f7d8 f7h6 f7g5 f7e5 d6e8 d6c8 d6b7 d6f5 d6b5 d6e4 d6c4 g4g8 g4c8 g4g7 g4d7 g4g6 g4e6 g4h5 g4g5 g4f5 g4h4 g4f4 g4e4 g4d4 g4c4 g4b4 g4h3 g4g3 g4f3 g4e2 a3d3 a3c3 a3b3 c2d3 c2b3 c2d2 c2b2 c2c1 c2b1 e3e4 g2g3 
+INCORRECT: 6r1/3P4/RP4P1/5n2/1Pp1K3/p5P1/2p1Pp2/4qk2 CORRECT: 19 TRY: 23 
+BOARD: 
+. . . . . . r .
+. . . P . . . .
+R P . . . . P .
+. . . . . n . .
+. P p . K . . .
+p . . . . . P .
+. . p . P p . .
+. . . . q k . .
+a6a8 a6a7 a6a5 a6a4 a6a3 e4f5 e4e5 e4d5 e4f4 e4f3 d7d8q d7d8r d7d8b d7d8n g6g7 b6b7 b4b5 g3g4 e2e3 
+INCORRECT: 2R5/4P2p/5rr1/4PkqP/2K5/7N/2PP1pN1/7R CORRECT: 45 TRY: 25 
+BOARD: 
+. . R . . . . .
+. . . . P . . p
+. . . . . r r .
+. . . . P k q P
+. . K . . . . .
+. . . . . . . N
+. . P P . p N .
+. . . . . . . R
+c8h8 c8g8 c8f8 c8e8 c8d8 c8b8 c8a8 c8c7 c8c6 c8c5 c4d5 c4c5 c4b5 c4d4 c4b4 c4d3 c4c3 c4b3 h3g5 h3f4 h3f2 h3g1 g2h4 g2f4 g2e3 g2e1 h1h2 h1g1 h1f1 h1e1 h1d1 h1c1 h1b1 h1a1 h5g6 e5f6 e7e8q e7e8r e7e8b e7e8n h5h6 e5e6 d2d3 c2c3 d2d4 
+INCORRECT: 1qk5/4p1n1/p4P2/2p5/1N6/1P1pRK2/N1P2P1P/8 CORRECT: 24 TRY: 25 
+BOARD: 
+. q k . . . . .
+. . . . p . n .
+p . . . . P . .
+. . p . . . . .
+. N . . . . . .
+. P . p R K . .
+N . P . . P . P
+. . . . . . . .
+b4c6 b4a6 b4d5 b4d3 f3g4 f3e4 f3g2 e3e7 e3e6 e3e5 e3e4 e3d3 e3e2 e3e1 a2c3 a2c1 f6g7 f6e7 c2d3 f6f7 h2h3 c2c3 h2h4 c2c4 
+INCORRECT: 4r3/P2r2p1/8/2PP1KPk/3qp2P/N7/1p4p1/n7 CORRECT: 12 TRY: 17 
+BOARD: 
+. . . . r . . .
+P . . r . . p .
+. . . . . . . .
+. . P P . K P k
+. . . q p . . P
+N . . . . . . .
+. p . . . . p .
+n . . . . . . .
+f5f4 a3b5 a3c4 a3c2 a3b1 a7a8q a7a8r a7a8b a7a8n g5g6 d5d6 c5c6 
+INCORRECT: 3K4/2R1p3/8/QP1P3r/1pn1Pp1P/3P4/3pp3/7k CORRECT: 26 TRY: 24 
+BOARD: 
+. . . K . . . .
+. . R . p . . .
+. . . . . . . .
+Q P . P . . . r
+. p n . P p . P
+. . . P . . . .
+. . . p p . . .
+. . . . . . . k
+d8e8 d8c8 d8e7 d8d7 c7c8 c7e7 c7d7 c7b7 c7a7 c7c6 c7c5 c7c4 a5a8 a5a7 a5b6 a5a6 a5b4 a5a4 a5a3 a5a2 a5a1 d3c4 d5d6 b5b6 e4e5 d3d4 
+INCORRECT: 3N4/P1PN1p2/p1Pp2n1/p7/2P5/7k/p1PK4/5R2 CORRECT: 39 TRY: 30 
+BOARD: 
+. . . N . . . .
+P . P N . p . .
+p . P p . . n .
+p . . . . . . .
+. . P . . . . .
+. . . . . . . k
+p . P K . . . .
+. . . . . R . .
+d8f7 d8b7 d8e6 d7f8 d7b8 d7f6 d7b6 d7e5 d7c5 d2e3 d2d3 d2c3 d2e2 d2e1 d2d1 d2c1 f1f7 f1f6 f1f5 f1f4 f1f3 f1f2 f1h1 f1g1 f1e1 f1d1 f1c1 f1b1 f1a1 c7c8q c7c8r c7c8b c7c8n a7a8q a7a8r a7a8b a7a8n c4c5 c2c3 
+INCORRECT: 5q2/3P1N1P/5P1p/1pR5/2pN4/4kP2/2p5/2K1n2Q CORRECT: 42 TRY: 27 
+BOARD: 
+. . . . . q . .
+. . . P . N . P
+. . . . . P . p
+. p R . . . . .
+. . p N . . . .
+. . . . k P . .
+. . p . . . . .
+. . K . n . . Q
+f7h8 f7d8 f7h6 f7d6 f7g5 f7e5 c5c8 c5c7 c5c6 c5h5 c5g5 c5f5 c5e5 c5d5 c5b5 c5c4 d4e6 d4c6 d4f5 d4b5 d4b3 d4e2 d4c2 h1h6 h1h5 h1h4 h1h3 h1h2 h1g2 h1g1 h1f1 h1e1 c1b2 h7h8q h7h8r h7h8b h7h8n d7d8q d7d8r d7d8b d7d8n f3f4 
+INCORRECT: 8/3P3n/1p1k1P1p/1R2N2P/1r6/3Pp3/1r3p2/1QK5 CORRECT: 22 TRY: 24 
+BOARD: 
+. . . . . . . .
+. . . P . . . n
+. p . k . P . p
+. R . . N . . P
+. r . . . . . .
+. . . P p . . .
+. r . . . p . .
+. Q K . . . . .
+e5f7 e5g6 e5c6 e5g4 e5c4 e5f3 b5b6 b5d5 b5c5 b5a5 b5b4 c1d1 b1c2 b1b2 b1a2 b1a1 d7d8q d7d8r d7d8b d7d8n f6f7 d3d4 
+INCORRECT: 8/R7/2KPP3/2pP2rp/2P5/2n2pkp/1n1N2p1/8 CORRECT: 26 TRY: 17 
+BOARD: 
+. . . . . . . .
+R . . . . . . .
+. . K P P . . .
+. . p P . . r p
+. . P . . . . .
+. . n . . p k p
+. n . N . . p .
+. . . . . . . .
+a7a8 a7h7 a7g7 a7f7 a7e7 a7d7 a7c7 a7b7 a7a6 a7a5 a7a4 a7a3 a7a2 a7a1 c6d7 c6c7 c6b7 c6b6 c6c5 d2e4 d2f3 d2b3 d2f1 d2b1 e6e7 d6d7 
+INCORRECT: 5n2/2N1K3/2P5/5q2/PPp5/P3p2p/pr3p2/r1k5 CORRECT: 11 TRY: 18 
+BOARD: 
+. . . . . n . .
+. . N . K . . .
+. . P . . . . .
+. . . . . q . .
+P P p . . . . .
+P . . . p . . p
+p r . . . p . .
+r . k . . . . .
+e7e8 e7d8 e7d6 c7e8 c7a8 c7e6 c7a6 c7d5 c7b5 b4b5 a4a5 
+INCORRECT: 1K6/6p1/1P5P/4Pq2/1kpp2p1/3np3/5PPP/7Q CORRECT: 21 TRY: 18 
+BOARD: 
+. K . . . . . .
+. . . . . . p .
+. P . . . . . P
+. . . . P q . .
+. k p p . . p .
+. . . n p . . .
+. . . . . P P P
+. . . . . . . Q
+b8a8 b8c7 b8b7 b8a7 h1g1 h1f1 h1e1 h1d1 h1c1 h1b1 h1a1 h6g7 f2e3 h6h7 b6b7 e5e6 h2h3 g2g3 f2f3 h2h4 f2f4 
+INCORRECT: K7/4P1qk/1pp4P/5P2/5pN1/5npp/8/Nr2Q3 CORRECT: 33 TRY: 27 
+BOARD: 
+K . . . . . . .
+. . . . P . q k
+. p p . . . . P
+. . . . . P . .
+. . . . . p N .
+. . . . . n p p
+. . . . . . . .
+N r . . Q . . .
+a8b8 a8b7 a8a7 g4f6 g4e5 g4e3 g4h2 g4f2 e1e6 e1e5 e1a5 e1e4 e1b4 e1g3 e1e3 e1c3 e1f2 e1e2 e1d2 e1h1 e1g1 e1f1 e1d1 e1c1 e1b1 a1b3 a1c2 h6g7 e7e8q e7e8r e7e8b e7e8n f5f6 
+INCORRECT: 1k6/1p4P1/6Kn/PP1P1p2/7r/2p1p3/1P2q1p1/7r CORRECT: 13 TRY: 17 
+BOARD: 
+. k . . . . . .
+. p . . . . P .
+. . . . . . K n
+P P . P . p . .
+. . . . . . . r
+. . p . p . . .
+. P . . q . p .
+. . . . . . . r
+g6h7 g6f6 g6g5 b2c3 g7g8q g7g8r g7g8b g7g8n d5d6 b5b6 a5a6 b2b3 b2b4 
+INCORRECT: 8/4Np2/1p6/3P1P1p/6pP/1RK1P3/3n1p1p/1qk5 CORRECT: 15 TRY: 21 
+BOARD: 
+. . . . . . . .
+. . . . N p . .
+. p . . . . . .
+. . . P . P . p
+. . . . . . p P
+. R K . P . . .
+. . . n . p . p
+. q k . . . . .
+e7g8 e7c8 e7g6 e7c6 c3d4 c3b4 b3b6 b3b5 b3b4 b3a3 b3b2 b3b1 f5f6 d5d6 e3e4 
+INCORRECT: 4k3/1P1r4/1N5p/8/n1RPp1pp/5P1P/5nK1/1q6 CORRECT: 25 TRY: 23 
+BOARD: 
+. . . . k . . .
+. P . r . . . .
+. N . . . . . p
+. . . . . . . .
+n . R P p . p p
+. . . . . P . P
+. . . . . n K .
+. q . . . . . .
+b6c8 b6a8 b6d7 b6d5 b6a4 c4c8 c4c7 c4c6 c4c5 c4b4 c4a4 c4c3 c4c2 c4c1 g2h2 g2f2 h3g4 f3g4 f3e4 b7b8q b7b8r b7b8b b7b8n d4d5 f3f4 

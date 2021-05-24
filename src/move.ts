@@ -28,6 +28,10 @@ class Move {
   get getSquareTo() {
     return this.to;
   }
+
+  print() {
+    return `${this.from.getNotation}${this.to.getNotation}`;
+  }
 }
 
 export default Move;

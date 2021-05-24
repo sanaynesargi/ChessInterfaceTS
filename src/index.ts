@@ -1,6 +1,7 @@
 import Board from "./board";
 
 import fs from "fs";
+import Move from "./move";
 
 interface dictionary {
   key: string;
@@ -62,6 +63,16 @@ function buildObject(dictionary: Array<dictionary>) {
   return obj;
 }
 
+async function getUciMoves(moves: Array<Move>) {
+  let outStr = "";
+
+  moves.forEach((move) => {
+    outStr += move.print() + " ";
+  });
+
+  return outStr;
+}
+
 async function getResults(fPath: string) {
   const rawData = fs.readFileSync(fPath).toString();
   const data: dictionary = JSON.parse(rawData).fens;
@@ -72,15 +83,16 @@ async function getResults(fPath: string) {
     if (validateFEN(key)) {
       const board = new Board();
       board.setBoard(key);
-      const legalMoveNum = await (await board.getLegalMoves("white")).length;
+      const legalMoves = await board.getLegalMoves("white");
+      const legalMovesParsed = await getUciMoves(legalMoves);
       storedMoves.push({
         key: key,
-        value: legalMoveNum,
+        value: legalMovesParsed,
       });
     }
     c += 1;
     console.log("IT: " + c);
-    await sleep(6000);
+    await sleep(4000);
   }
 
   const testData = buildObject(storedMoves);
@@ -92,6 +104,18 @@ async function main() {
   let board = new Board();
 
   board.setBoard();
+
+  // const legalMovesInPosition = await (
+  //   await board.getLegalMoves("white")
+  // ).sort();
+  // let outStr = "";
+
+  // legalMovesInPosition.forEach((move) => {
+  //   outStr +=
+  //     move.print() +
+  //     (legalMovesInPosition.indexOf(move) % 6 === 0 ? "\n" : " ");
+  // });
+  //console.log(outStr);
 
   console.log(board.printBoard());
 
