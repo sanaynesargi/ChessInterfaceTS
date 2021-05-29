@@ -1,6 +1,6 @@
-import Piece from "./piece";
-import square from "./square";
-import Square from "./square";
+import Piece from "../piece";
+import square from "../square";
+import Square from "../square";
 
 class Move {
   from: square;

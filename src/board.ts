@@ -1,7 +1,6 @@
+import Move from "./moves/move";
 import { BISHOP, EMPTY, KING, KNIGHT, PAWN, QUEEN, ROOK } from "./constants";
-import Move from "./move";
 import Piece from "./piece";
-import Pawn from "./pieces/pawn";
 import Square from "./square";
 import flattenRank from "./utils/flattenRank";
 import getConsecutiveEmptySquares from "./utils/getConsecutiveEmptySquares";
@@ -88,6 +87,25 @@ class Board {
 
   get getPlayedMoves(): Array<Move> {
     return this.moves;
+  }
+
+  getKingSquare(color: "white" | "black"): Square | null {
+    for (let i = 0; i < this.board.length; i++) {
+      for (let j = 0; j < this.board[i].length; j++) {
+        if (!this.board[i][j].getPieceObj) {
+          continue;
+        } else if (!(this.board[i][j].getPieceObj.getColor === color)) {
+          continue;
+        }
+
+        if (color === "white" && this.board[i][j].getWhiteKingSquare) {
+          return this.board[i][j];
+        } else if (color === "black" && this.board[i][j].getBlackKingSquare) {
+          return this.board[i][j];
+        }
+      }
+    }
+    return null;
   }
 
   get getPlayerTurn(): string {
@@ -271,6 +289,14 @@ class Board {
             isLastRank ? "black" : "white",
             isLastRank ? back_rank[j].toLowerCase() : back_rank[j]
           );
+          if (
+            back_rank[j] === this.KING ||
+            back_rank[j] === this.KING.toLowerCase()
+          ) {
+            i === 7
+              ? this.board[i][j].setWhiteKingSquare()
+              : this.board[i][j].setBlackKingSquare();
+          }
         } else if (i === 1 || i === 6) {
           this.board[i][j] = new Square(
             i,
@@ -757,7 +783,25 @@ class Board {
     return movableSquares;
   }
 
-  async _checkLegalMove(squareFrom: Square, squareTo: Square, debug?: boolean) {
+  async _checkLegalMove(
+    squareFrom?: Square,
+    squareTo?: Square,
+    castle: boolean,
+    dir?: "K" | "Q" | "k" | "q",
+    debug?: boolean
+  ) {
+    if (castle && dir) {
+      // TODO: CHECK FOR CASTLING
+      const notation = dir === "k" || dir === "K" ? "O-O" : "O-O-O";
+      if (this._castle(notation, dir)) {
+        return true;
+      }
+      return false;
+    }
+    if (!squareFrom || !squareTo) {
+      return false;
+    }
+
     // Implement Legal Move Checking Here
     let result: boolean;
 
@@ -796,39 +840,22 @@ class Board {
 
     // CHECK FOR PAWN FIRST MOVE
     if (squareFrom.getPiece.toLowerCase() === "p") {
-      let pawnMoveMade = squareFrom.getPieceObj.getFirstMoveMade;
-
-      if (!pawnMoveMade) {
-        let pawnSquare = moves.moveOnly[0].getNotation;
-        let colorCoefficient =
-          squareFrom.getPieceObj.getColor === "white" ? 1 : -1;
-        let newNotation = parseInt(
-          `${pawnSquare.charCodeAt(0)}${
-            parseInt(pawnSquare.slice(-1)) + colorCoefficient
-          }`
-        );
-        let newNotationSquare = this._notationToSquare(newNotation);
-        if (newNotationSquare) {
-          moves.moveOnly.push(newNotationSquare);
-        }
-      }
-
       squareFrom.getPieceObj.setFirstMoveMade();
     }
 
     // CHECK IF SQUARE TO ME MOVED TO IS IN LEGAL MOVES
 
     if (moves.moveOnly.includes(squareTo)) {
-      if (moves.moveAndCapture.includes(squareTo)) {
-        result = true;
-      } else if (
-        moves.captureOnly.includes(squareTo) &&
-        this._checkCapture(squareFrom, squareTo)
-      ) {
-        result = true;
-      } else {
-        result = false;
-      }
+      result = true;
+    } else if (moves.moveAndCapture.includes(squareTo)) {
+      result = true;
+    } else if (
+      moves.captureOnly.includes(squareTo) &&
+      this._checkCapture(squareFrom, squareTo)
+    ) {
+      result = true;
+    } else {
+      result = false;
     }
 
     return result;
@@ -991,28 +1018,40 @@ class Board {
           case "g8":
 
           case "f8": {
-            this.canBlackCastleKTemp = false;
+            if (this.canBlackCastleKTemp) {
+              this.canBlackCastleKTemp =
+                this.board[i][j].getPiece !== this.EMPTY ? false : true;
+            }
             break;
           }
           // _________________________________
           case "d8":
 
           case "c8": {
-            this.canBlackCastleQTemp = false;
+            if (this.canBlackCastleQTemp) {
+              this.canBlackCastleQTemp =
+                this.board[i][j].getPiece !== this.EMPTY ? false : true;
+            }
             break;
           }
           // _________________________________
           case "g1":
 
           case "f1": {
-            this.canWhiteCastleKTemp = false;
+            if (this.canWhiteCastleKTemp) {
+              this.canWhiteCastleKTemp =
+                this.board[i][j].getPiece !== this.EMPTY ? false : true;
+            }
             break;
           }
           // _________________________________
           case "d1":
 
           case "c1": {
-            this.canWhiteCastleQTemp = false;
+            if (this.canWhiteCastleQTemp) {
+              this.canWhiteCastleQTemp =
+                this.board[i][j].getPiece !== this.EMPTY ? false : true;
+            }
             break;
           }
         }
@@ -1041,10 +1080,12 @@ class Board {
     });
   }
 
-  _canCastle(color: string, direction: string) {
+  _canCastle(direction: "K" | "Q" | "k" | "q") {
     switch (direction) {
       case "K": {
         if (!this.canWhiteCastleKPerm) {
+          return false;
+        } else if (!this.canWhiteCastleKTemp) {
           return false;
         }
         break;
@@ -1052,11 +1093,15 @@ class Board {
       case "Q": {
         if (!this.canWhiteCastleQPerm) {
           return false;
+        } else if (!this.canWhiteCastleQTemp) {
+          return false;
         }
         break;
       }
       case "k": {
         if (!this.canBlackCastleKPerm) {
+          return false;
+        } else if (!this.canBlackCastleKTemp) {
           return false;
         }
         break;
@@ -1064,8 +1109,84 @@ class Board {
       case "q": {
         if (!this.canBlackCastleQPerm) {
           return false;
+        } else if (!this.canBlackCastleQTemp) {
+          return false;
         }
         break;
+      }
+    }
+
+    return true;
+  }
+
+  _getRookSquare(direction: "K" | "Q" | "k" | "q") {
+    switch (direction) {
+      case "K": {
+        return "h1";
+      }
+      case "Q": {
+        return "a1";
+      }
+      case "k": {
+        return "h8";
+      }
+      case "q": {
+        return "a8";
+      }
+      default: {
+        return false;
+      }
+    }
+  }
+
+  _castle(notation: string, direction: "K" | "Q" | "k" | "q") {
+    if (!this._canCastle(direction)) {
+      return false;
+    }
+
+    const color = direction.toUpperCase() === direction ? "white" : "black";
+    const kingSquare = this.getKingSquare(color);
+    const rookSquare = this._getRookSquare(direction);
+
+    if (!kingSquare || !rookSquare) {
+      return false;
+    }
+
+    const actualRookSquare = this._notationToSquare(
+      this._notationToNumber(rookSquare)
+    )!;
+
+    switch (notation) {
+      case "O-O": {
+        if (color === "white") {
+          const g1 = this._notationToSquare(this._notationToNumber("g1"))!;
+          const f1 = this._notationToSquare(this._notationToNumber("f1"))!;
+          kingSquare.movePiece(g1);
+          actualRookSquare.movePiece(f1);
+        } else {
+          const g8 = this._notationToSquare(this._notationToNumber("g8"))!;
+          const f8 = this._notationToSquare(this._notationToNumber("f8"))!;
+          kingSquare.movePiece(g8);
+          actualRookSquare.movePiece(f8);
+        }
+        break;
+      }
+      case "O-O-O": {
+        if (color === "white") {
+          const d8 = this._notationToSquare(this._notationToNumber("d8"))!;
+          const c8 = this._notationToSquare(this._notationToNumber("c8"))!;
+          kingSquare.movePiece(d8);
+          actualRookSquare.movePiece(c8);
+        } else {
+          const d1 = this._notationToSquare(this._notationToNumber("d1"))!;
+          const c1 = this._notationToSquare(this._notationToNumber("c1"))!;
+          kingSquare.movePiece(d1);
+          kingSquare.movePiece(c1);
+        }
+        break;
+      }
+      default: {
+        return -1;
       }
     }
   }
@@ -1094,8 +1215,18 @@ class Board {
   async movePiece(
     notationFrom?: string,
     notationTo?: string,
-    castleDirection?: string
+    castleDirection?: "K" | "Q" | "k" | "q"
   ) {
+    if (castleDirection) {
+      let res = await this._checkLegalMove(undefined, undefined, true);
+      if (res) {
+        const notation =
+          castleDirection === "k" || castleDirection === "K" ? "O-O" : "O-O-O";
+        this.moves.push("CASTLE");
+        this._castle(notation, castleDirection);
+      }
+      return;
+    }
     if (!notationFrom || !notationTo) {
       return;
     }
@@ -1111,7 +1242,7 @@ class Board {
       console.log("FROM: " + fromSquare.getNotation);
       console.log("TO: " + toSquare.getNotation);
 
-      let result = await this._checkLegalMove(fromSquare, toSquare);
+      let result = await this._checkLegalMove(fromSquare, toSquare, false);
       //let isCapture = this._checkCapture(fromSquare, toSquare);
 
       if (result) {
@@ -1119,6 +1250,16 @@ class Board {
           this.halfmoveClock = 0;
         } else if (fromSquare.getPieceObj.getName.toLowerCase() === "p") {
           this.halfmoveClock = 0;
+        }
+
+        if (
+          fromSquare.getPiece === this.KING ||
+          fromSquare.getPiece === this.KING.toLowerCase()
+        ) {
+          fromSquare.getPieceObj.getColor === "white"
+            ? toSquare.setWhiteKingSquare()
+            : toSquare.setBlackKingSquare();
+          fromSquare.resetKingSquare();
         }
 
         let result = fromSquare.movePiece(toSquare);
@@ -1129,9 +1270,7 @@ class Board {
           console.log("INVALID PIECE!");
           return;
         }
-        this.moves.push(
-          new Move(toSquare.getPieceObj, notationFrom, notationTo)
-        );
+        this.moves.push(new Move(toSquare.getPieceObj, fromSquare, toSquare));
         if (this.turn === 0) {
           this.turn = 1;
         } else {

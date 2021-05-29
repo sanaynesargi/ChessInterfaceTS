@@ -45,6 +45,19 @@ class Square {
     this.blackKingSquare = false;
   }
 
+  resetKingSquare(): void {
+    this.whiteKingSquare = false;
+    this.blackKingSquare = false;
+  }
+
+  get getBlackKingSquare(): boolean {
+    return this.blackKingSquare;
+  }
+
+  get getWhiteKingSquare(): boolean {
+    return this.whiteKingSquare;
+  }
+
   _setAsciiPiece() {
     this.asciiPiece = this.getPieceObj.getLigature;
   }
@@ -93,6 +106,15 @@ class Square {
     let res = to.setPiece(
       typeof this.piece !== "string" ? this.piece.getName : "EMPTY"
     );
+
+    if (
+      typeof this.piece !== "string" &&
+      (this.piece.getName === "K" || this.piece.getName === "k")
+    ) {
+      this.piece.getName === "K"
+        ? to.setWhiteKingSquare()
+        : to.setBlackKingSquare();
+    }
 
     if (res === -1) {
       return -1;
