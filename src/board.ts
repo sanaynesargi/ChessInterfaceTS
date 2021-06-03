@@ -884,6 +884,8 @@ class Board {
   async getLegalMoves(color: string) {
     let legalMoves: Array<Move> = new Array<Move>();
 
+    // CASTLING OMITTED
+
     for (let i = 0; i < this.board.length; i++) {
       for (let j = 0; j < this.board[i].length; j++) {
         const square = this.board[i][j];
